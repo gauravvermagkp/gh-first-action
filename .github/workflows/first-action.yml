@@ -10,4 +10,6 @@ jobs :
           echo "Hello Again"
       - name : Say GoodBye
         run : echo "Good Bye"
+      - name : checkout_code
+        uses : actions/checkout@v4
       
