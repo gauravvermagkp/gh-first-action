@@ -16,7 +16,7 @@ jobs :
       - name : Print env context 
         run: echo 'Hi ${{ env.mascot }}' 
       - name : Runner Context
-        run : echo '${{runner.os}}'
+        run : echo '${{runner.os}}' , '${{runner.temp}}'
       - name : checkout_code
         uses : actions/checkout@v4
         with :
