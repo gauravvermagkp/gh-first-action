@@ -1,6 +1,9 @@
 name: First Workflow
-on : workflow_dispatch
-env:
+on : 
+  push:
+    branches: 
+     -main
+env:  
   mascot: Mona
   super_duper_var: totally_awesome
 jobs :
@@ -16,7 +19,7 @@ jobs :
       - name : Print env context 
         run: echo 'Hi ${{ env.mascot }}' 
       - name : Runner Context
-        run : echo '${{runner.os}}' , '${{runner.temp}}'
+        run : echo '${{runner.os}}' , '${{runner.temp}}' , '${{runner}}'
       - name : checkout_code
         uses : actions/checkout@v4
         with :
