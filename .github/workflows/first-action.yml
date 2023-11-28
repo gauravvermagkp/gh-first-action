@@ -1,5 +1,8 @@
 name: First Workflow
 on : workflow_dispatch
+env:
+  mascot: Mona
+  super_duper_var: totally_awesome
 jobs :
   my-first-job :
     runs-on : ubuntu-latest
@@ -10,6 +13,10 @@ jobs :
           echo "Hello Again"
       - name : Say GoodBye
         run : echo "Good Bye"
+      - name : Print env context 
+        run: echo 'Hi ${{ env.mascot }}'
+        env : 
+          mascot: Mona2
       - name : checkout_code
         uses : actions/checkout@v4
         with :
