@@ -14,7 +14,9 @@ jobs :
       - name : Say GoodBye
         run : echo "Good Bye"
       - name : Print env context 
-        run: echo 'Hi ${{ env.mascot }}'        
+        run: echo 'Hi ${{ env.mascot }}' 
+      - name : Runner Context
+        run : echo '${{runner.os}}'
       - name : checkout_code
         uses : actions/checkout@v4
         with :
